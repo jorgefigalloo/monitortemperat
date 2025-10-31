@@ -198,10 +198,13 @@ if archivo is not None:
                 c.drawString(50, height - 130, f"Tipo de gráfico: {opcion}")
 
                 # Datos de resumen
-                c.drawString(50, height - 160, f"Temperatura máxima: {temp_max['Temperatura']:.2f} °C ({temp_max['Día']} {temp_max['Hora']})")
-                c.drawString(50, height - 175, f"Temperatura mínima: {temp_min['Temperatura']:.2f} °C ({temp_min['Día']} {temp_min['Hora']})")
+                
+                c.drawString(50, height - 160, f"Temperatura máxima: {fila_max['Temperatura']:.2f} °C ({fila_max['Día']} {fila_max['Hora']})")
+                c.drawString(50, height - 175, f"Temperatura mínima: {fila_min['Temperatura']:.2f} °C ({fila_min['Día']} {fila_min['Hora']})")
                 c.drawString(50, height - 190, f"Temperatura promedio: {temp_mean:.2f} °C")
 
+
+             
                 # Insertar gráfico
                 img_buffer = io.BytesIO()
                 fig.savefig(img_buffer, format='PNG', bbox_inches='tight')
